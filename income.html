@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Income | Finance Pro</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  /* ======================================
+   Finance Pro
+   Income Page Premium CSS
+====================================== */
+
+
+/* Page Area */
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b
+);
+
+}
+
+
+
+/* Header */
+
+.header{
+
+margin-bottom:20px;
+
+}
+
+
+
+.header .logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+.header .logo i{
+
+font-size:28px;
+
+color:#10b981;
+
+}
+
+
+
+.header h2{
+
+font-size:22px;
+
+}
+
+
+
+
+
+.header a{
+
+font-size:24px;
+
+color:white;
+
+}
+
+
+
+
+
+/* Income Form Card */
+
+.income-container{
+
+margin:20px;
+
+}
+
+
+
+.card{
+
+
+background:
+
+rgba(255,255,255,.10);
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+
+backdrop-filter:
+
+blur(20px);
+
+
+border-radius:25px;
+
+
+padding:25px;
+
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+.card h2{
+
+margin-bottom:20px;
+
+font-size:24px;
+
+}
+
+
+
+
+
+/* Inputs */
+
+
+.input{
+
+
+height:52px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+border-radius:15px;
+
+
+padding:0 16px;
+
+
+font-size:16px;
+
+
+color:white;
+
+
+transition:.3s;
+
+
+}
+
+
+
+textarea.input{
+
+height:120px;
+
+padding-top:15px;
+
+resize:none;
+
+}
+
+
+
+
+
+.input:focus{
+
+
+border-color:#10b981;
+
+
+box-shadow:
+
+0 0 0 3px rgba(16,185,129,.2);
+
+
+outline:none;
+
+
+}
+
+
+
+
+
+select.input option{
+
+
+color:#111827;
+
+}
+
+
+
+
+
+/* Save Button */
+
+
+.btn{
+
+
+height:52px;
+
+
+border-radius:15px;
+
+
+background:
+
+linear-gradient(
+135deg,
+#10b981,
+#059669
+);
+
+
+font-size:17px;
+
+
+box-shadow:
+
+0 10px 25px rgba(16,185,129,.3);
+
+
+}
+
+
+
+.btn:hover{
+
+
+transform:
+
+translateY(-3px);
+
+
+}
+
+
+
+
+
+/* Income History */
+
+
+section h2{
+
+font-size:23px;
+
+margin-bottom:15px;
+
+}
+
+
+
+
+
+#incomeList{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+
+}
+
+
+
+
+
+/* History Card */
+
+.income-item{
+
+
+background:
+
+rgba(255,255,255,.10);
+
+
+border-radius:18px;
+
+
+padding:18px;
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+align-items:center;
+
+
+border-left:
+
+5px solid #10b981;
+
+
+}
+
+
+
+.income-item h3{
+
+
+margin:0;
+
+
+font-size:18px;
+
+
+}
+
+
+
+.income-item p{
+
+
+color:#cbd5e1;
+
+
+margin-top:5px;
+
+
+}
+
+
+
+
+
+.income-amount{
+
+
+font-size:20px;
+
+
+font-weight:700;
+
+
+color:#10b981;
+
+
+}
+
+
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+.card{
+
+
+margin:15px!important;
+
+
+padding:20px;
+
+
+}
+
+
+
+.header{
+
+
+padding:15px;
+
+
+}
+
+
+
+.input{
+
+
+font-size:15px;
+
+}
+
+
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h2>Income</h2>
+
+</div>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+</header>
+
+<section class="card" style="margin:20px;">
+
+<h2>Add Income</h2>
+
+<form id="incomeForm">
+
+<input
+type="number"
+id="amount"
+class="input"
+placeholder="Amount"
+required>
+
+<select
+id="category"
+class="input"
+required>
+
+<option value="">Select Category</option>
+
+<option>Salary</option>
+
+<option>Business</option>
+
+<option>Freelancing</option>
+
+<option>Gift</option>
+
+<option>Other</option>
+
+</select>
+
+<input
+type="date"
+id="date"
+class="input"
+required>
+
+<textarea
+id="note"
+class="input"
+placeholder="Note"></textarea>
+
+<button
+class="btn"
+type="submit">
+
+Save Income
+
+</button>
+
+</form>
+
+</section>
+
+<section style="margin:20px;">
+
+<h2>Income History</h2>
+
+<div id="incomeList">
+
+</div>
+
+</section>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/income.js"></script>
+
+</body>
+
+</html>

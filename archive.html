@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Archive | Finance Pro</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* ===== Archive Page ===== */
+
+body{
+padding-bottom:30px;
+}
+
+.header{
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.archive-container{
+margin:20px;
+}
+
+.archive-title{
+font-size:26px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+#archiveList{
+margin-top:18px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.archive-card{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(18px);
+
+border-radius:22px;
+
+padding:18px;
+
+animation:fade .4s ease;
+
+}
+
+.archive-card h3{
+
+font-size:20px;
+
+margin-bottom:10px;
+
+font-weight:600;
+
+}
+
+.archive-card p{
+
+font-size:14px;
+
+opacity:.8;
+
+margin-bottom:18px;
+
+}
+
+.archive-actions{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.archive-actions .btn{
+
+flex:1;
+
+padding:13px;
+
+border-radius:14px;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.openBtn{
+
+background:#4F46E5;
+
+}
+
+.openBtn:hover{
+
+background:#4338CA;
+
+}
+
+.deleteBtn{
+
+background:#EF4444;
+
+}
+
+.deleteBtn:hover{
+
+background:#DC2626;
+
+}
+
+.empty-card{
+
+text-align:center;
+
+padding:35px 20px;
+
+}
+
+.empty-card i{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+opacity:.6;
+
+}
+
+.empty-card h3{
+
+margin-bottom:10px;
+
+}
+
+@media(max-width:600px){
+
+.archive-actions{
+
+flex-direction:column;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+<i class="fa-solid fa-box-archive"></i>
+
+<h2>My Archives</h2>
+
+</div>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+</header>
+
+<section class="archive-container">
+
+<h2 class="archive-title">
+
+📦 Saved Reports
+
+</h2>
+
+<div id="archiveList">
+
+<div class="archive-card empty-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<h3>Loading Archives...</h3>
+
+<p>Please wait...</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/archive.js"></script>
+
+</body>
+
+</html>

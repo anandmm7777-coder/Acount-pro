@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Finance Pro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+<div class="auth-card">
+
+<img src="1785350775295.png" class="logo" alt="Logo">
+
+<h2>Create Account</h2>
+
+<p>Create your Finance Pro account</p>
+
+<form id="signupForm">
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+id="name"
+class="input"
+placeholder="Full Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+class="input"
+placeholder="Email Address"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+class="input"
+placeholder="Password"
+required>
+
+<i
+class="fa-solid fa-eye"
+id="togglePassword"></i>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="confirmPassword"
+class="input"
+placeholder="Confirm Password"
+required>
+
+<i
+class="fa-solid fa-eye"
+id="toggleConfirmPassword"></i>
+
+</div>
+
+<button
+class="btn"
+type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+<button
+class="btn"
+id="googleLogin"
+style="margin-top:15px;background:#fff;color:#111;">
+
+<i class="fab fa-google"></i>
+
+Continue with Google
+
+</button>
+
+<div style="margin-top:20px;">
+
+Already have an account?
+
+<a href="login.html">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+  // =======================================
+// Finance Pro
+// signup.js
+// =======================================
+
+
+import { auth, db } from "./firebase.js";
+
+
+import {
+
+createUserWithEmailAndPassword
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+import {
+
+doc,
+setDoc
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+
+
+
+const signupForm =
+
+document.getElementById("signupForm");
+
+
+
+
+
+
+
+
+signupForm.addEventListener("submit",async(e)=>{
+
+
+e.preventDefault();
+
+
+
+
+const name =
+
+document.getElementById("name").value;
+
+
+
+const email =
+
+document.getElementById("email").value;
+
+
+
+const password =
+
+document.getElementById("password").value;
+
+
+
+
+
+try{
+
+
+
+
+
+// Create Firebase Account
+
+
+const userCredential =
+
+await createUserWithEmailAndPassword(
+
+auth,
+
+email,
+
+password
+
+);
+
+
+
+
+const user =
+
+userCredential.user;
+
+
+
+
+
+
+
+
+
+// Create Firestore User Document
+
+
+await setDoc(
+
+doc(
+
+db,
+
+"users",
+
+user.uid
+
+),
+
+{
+
+
+name:name,
+
+
+email:email,
+
+
+photo:"",
+
+
+
+totalIncome:0,
+
+
+totalExpense:0,
+
+
+totalSavings:0,
+
+
+
+createdAt:Date.now()
+
+
+
+}
+
+);
+
+
+
+
+
+
+
+
+
+alert(
+
+"Account Created Successfully"
+
+);
+
+
+
+location.href="dashboard.html";
+
+
+
+
+
+}
+
+catch(error){
+
+
+alert(error.message);
+
+
+}
+
+
+
+});
+</script>
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+</body>
+
+</html>

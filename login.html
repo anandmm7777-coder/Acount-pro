@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Finance Pro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <img src="1785350775295.png" class="logo" alt="Logo">
+
+            <h2>Welcome Back</h2>
+
+            <p>Login to continue</p>
+
+            <form id="loginForm">
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input type="email"
+                        id="email"
+                        class="input"
+                        placeholder="Email Address"
+                        required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password"
+                        id="password"
+                        class="input"
+                        placeholder="Password"
+                        required>
+
+                    <i class="fa-solid fa-eye"
+                        id="togglePassword"
+                        style="cursor:pointer;"></i>
+
+                </div>
+
+                <div class="row">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="forgot-password.html">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <button class="btn" type="submit">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <button
+                class="btn"
+                id="googleLogin"
+                style="margin-top:15px;background:#fff;color:#111;">
+
+                <i class="fab fa-google"></i>
+
+                Continue with Google
+
+            </button>
+
+            <div style="margin-top:20px;">
+
+                Don't have an account?
+
+                <a href="signup.html">
+
+                    Sign Up
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const pass =
+            document.getElementById("password");
+
+        const eye =
+            document.getElementById("togglePassword");
+
+        eye.onclick = () => {
+
+            if (pass.type === "password") {
+
+                pass.type = "text";
+
+                eye.classList.replace(
+                    "fa-eye",
+                    "fa-eye-slash"
+                );
+
+            } else {
+
+                pass.type = "password";
+
+                eye.classList.replace(
+                    "fa-eye-slash",
+                    "fa-eye"
+                );
+
+            }
+
+        };
+
+    </script>
+
+    <script type="module" src="js/firebase.js"></script>
+
+    <script type="module" src="js/auth.js"></script>
+
+</body>
+
+</html>

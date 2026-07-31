@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reports | Finance Pro</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  /* ==========================================
+   Finance Pro
+   Reports CSS
+========================================== */
+
+
+/* Report Cards */
+
+.report-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin:20px;
+
+}
+
+
+
+.report-cards .card{
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+
+.report-cards h3{
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+}
+
+
+
+.report-cards h2{
+
+    margin-top:15px;
+
+    font-size:28px;
+
+}
+
+
+
+/* Income Card */
+
+.report-cards .card:nth-child(1){
+
+    border-left:5px solid #10b981;
+
+}
+
+
+
+/* Expense Card */
+
+.report-cards .card:nth-child(2){
+
+    border-left:5px solid #ef4444;
+
+}
+
+
+
+/* Saving Card */
+
+.report-cards .card:nth-child(3){
+
+    border-left:5px solid #3b82f6;
+
+}
+
+
+
+
+
+/* Chart Section */
+
+
+.chart-section{
+
+    margin:20px;
+
+}
+
+
+
+.chart-section h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.chart-box{
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    backdrop-filter:blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    min-height:300px;
+
+}
+
+
+
+
+
+canvas{
+
+    max-height:350px;
+
+}
+
+
+
+
+
+/* Animation */
+
+
+.report-cards .card,
+.chart-box{
+
+
+    animation:
+
+    fadeUp .5s ease;
+
+
+}
+
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+/* Mobile Responsive */
+
+
+@media(max-width:768px){
+
+
+.report-cards{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.chart-section{
+
+    margin:15px;
+
+}
+
+
+
+.report-cards{
+
+    margin:15px;
+
+}
+
+
+
+.report-cards h2{
+
+    font-size:24px;
+
+}
+
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<h2>Reports</h2>
+
+</div>
+
+
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+
+</header>
+
+
+
+
+
+<section class="report-cards">
+
+
+
+<div class="card">
+
+<h3>Total Income</h3>
+
+<h2 id="reportIncome">
+
+₹0
+
+</h2>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Total Expense</h3>
+
+<h2 id="reportExpense">
+
+₹0
+
+</h2>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Total Savings</h3>
+
+<h2 id="reportSaving">
+
+₹0
+
+</h2>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<section class="chart-section">
+
+
+<h2>Income vs Expense</h2>
+
+
+<div class="chart-box">
+
+<canvas id="incomeExpenseChart"></canvas>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="chart-section">
+
+
+<h2>Expense Category</h2>
+
+
+<div class="chart-box">
+
+<canvas id="categoryChart"></canvas>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/reports.js"></script>
+
+
+
+</body>
+
+</html>

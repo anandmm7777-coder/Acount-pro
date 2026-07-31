@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | Finance Pro</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  /* ==========================================
+   Finance Pro
+   Profile CSS
+========================================== */
+
+
+/* Profile Card */
+
+.profile-card{
+
+    margin:20px;
+
+    text-align:center;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    animation:fadeIn .5s ease;
+
+}
+
+
+
+/* Profile Image */
+
+.profile-image{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:
+
+    4px solid #4f46e5;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.4);
+
+}
+
+
+
+.profile-card h2{
+
+    margin-top:15px;
+
+    font-size:28px;
+
+}
+
+
+
+.profile-card p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+/* Edit Profile */
+
+
+.profile-form{
+
+    margin:20px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+.profile-form h2{
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* Actions */
+
+
+.profile-actions{
+
+    margin:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* Buttons */
+
+
+.profile-actions .btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+
+
+/* Logout Button */
+
+
+.logout{
+
+    background:#ef4444;
+
+}
+
+
+
+.logout:hover{
+
+    background:#dc2626;
+
+}
+
+
+
+
+
+/* Animation */
+
+
+@keyframes fadeIn{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:768px){
+
+
+.profile-card{
+
+    margin:15px;
+
+    padding:25px;
+
+}
+
+
+
+.profile-image{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+
+
+.profile-card h2{
+
+    font-size:24px;
+
+}
+
+
+
+.profile-actions,
+.profile-form{
+
+    margin:15px;
+
+}
+
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<header class="header">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-user"></i>
+
+<h2>Profile</h2>
+
+</div>
+
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+
+</header>
+
+
+
+
+
+<section class="profile-card">
+
+
+
+<img
+
+id="userPhoto"
+
+src="assets/profile.png"
+
+class="profile-image"
+
+>
+
+
+
+<h2 id="userName">
+
+User Name
+
+</h2>
+
+
+
+<p id="userEmail">
+
+Email
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+<section class="card profile-form">
+
+
+<h2>Edit Profile</h2>
+
+
+
+<form id="profileForm">
+
+
+
+<input
+
+type="text"
+
+id="name"
+
+class="input"
+
+placeholder="Your Name"
+
+required>
+
+
+
+<button class="btn">
+
+Update Profile
+
+</button>
+
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+
+<section class="card profile-actions">
+
+
+
+<button id="changePassword"
+class="btn">
+
+
+<i class="fa-solid fa-lock"></i>
+
+Change Password
+
+
+</button>
+
+
+
+
+<button id="logoutBtn"
+class="btn logout">
+
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/profile.js"></script>
+
+
+
+</body>
+
+</html>

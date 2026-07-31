@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | Finance Pro</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  /* ==========================================
+   Finance Pro
+   Settings CSS
+========================================== */
+
+
+/* Settings Container */
+
+.settings-box{
+
+    margin:20px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    animation:slideUp .5s ease;
+
+}
+
+
+
+.settings-box h2{
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+
+
+
+
+/* Setting Item */
+
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+}
+
+
+
+.setting-item p{
+
+    font-size:16px;
+
+}
+
+
+
+
+
+/* Toggle Switch */
+
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:55px;
+
+    height:28px;
+
+}
+
+
+
+.switch input{
+
+    opacity:0;
+
+    width:0;
+
+    height:0;
+
+}
+
+
+
+.slider{
+
+    position:absolute;
+
+    cursor:pointer;
+
+    inset:0;
+
+    background:#64748b;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    height:22px;
+
+    width:22px;
+
+    left:3px;
+
+    bottom:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+
+
+.switch input:checked + .slider{
+
+    background:#4f46e5;
+
+}
+
+
+
+.switch input:checked + .slider:before{
+
+    transform:translateX(27px);
+
+}
+
+
+
+
+
+/* Currency Select */
+
+
+#currency{
+
+    width:100%;
+
+}
+
+
+
+
+
+/* Buttons */
+
+
+.settings-box .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+
+
+
+
+/* Delete Button */
+
+
+.danger{
+
+    background:#ef4444;
+
+}
+
+
+
+.danger:hover{
+
+    background:#dc2626;
+
+}
+
+
+
+
+
+/* Dark Mode */
+
+
+.dark{
+
+    background:#020617;
+
+    color:#fff;
+
+}
+
+
+
+.dark .card{
+
+    background:
+
+    rgba(255,255,255,.05);
+
+}
+
+
+
+
+
+/* Animation */
+
+
+@keyframes slideUp{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:768px){
+
+
+.settings-box{
+
+    margin:15px;
+
+    padding:20px;
+
+}
+
+
+
+.setting-item p{
+
+    font-size:14px;
+
+}
+
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-gear"></i>
+
+<h2>Settings</h2>
+
+</div>
+
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+
+</header>
+
+
+
+
+
+<section class="card settings-box">
+
+
+<h2>
+
+Appearance
+
+</h2>
+
+
+<div class="setting-item">
+
+
+<p>
+
+🌙 Dark Mode
+
+</p>
+
+
+<label class="switch">
+
+
+<input type="checkbox" id="darkMode">
+
+
+<span class="slider"></span>
+
+
+</label>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="card settings-box">
+
+
+<h2>
+
+Currency
+
+</h2>
+
+
+<select id="currency" class="input">
+
+
+<option value="INR">
+
+₹ Indian Rupee
+
+</option>
+
+
+<option value="USD">
+
+$ Dollar
+
+</option>
+
+
+<option value="EUR">
+
+€ Euro
+
+</option>
+
+
+</select>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="card settings-box">
+
+
+<h2>
+
+Notifications
+
+</h2>
+
+
+
+<div class="setting-item">
+
+
+<p>
+
+🔔 Enable Notifications
+
+</p>
+
+
+<label class="switch">
+
+
+<input type="checkbox" id="notification">
+
+
+<span class="slider"></span>
+
+
+</label>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="card settings-box">
+
+
+<h2>
+
+Security
+
+</h2>
+
+
+<button id="changePassword" class="btn">
+
+Change Password
+
+</button>
+
+
+
+<button id="deleteAccount" class="btn danger">
+
+Delete Account
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/settings.js"></script>
+
+
+
+</body>
+
+</html>

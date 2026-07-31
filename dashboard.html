@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Dashboard | Finance Pro</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+
+<header class="header">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h2>
+Finance Pro
+</h2>
+
+</div>
+
+
+
+<div class="header-actions">
+
+
+
+<!-- Notification -->
+
+
+<a href="notifications.html" class="notification-btn">
+
+
+<i class="fa-solid fa-bell"></i>
+
+
+<span id="notificationCount">
+
+0
+
+</span>
+
+
+</a>
+
+
+
+
+
+<!-- Profile -->
+
+
+<div class="profile">
+
+
+<img
+
+id="profilePhoto"
+
+src="assets/profile.png"
+
+alt="Profile"
+
+
+>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- ================= WELCOME ================= -->
+
+
+<section class="welcome">
+
+
+<h1 id="welcomeName">
+
+Welcome 👋
+
+</h1>
+
+
+
+<p>
+
+Manage your money smarter.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= BALANCE ================= -->
+
+
+<section class="balance-card">
+
+
+<div>
+
+
+<h4>
+
+Total Balance
+
+</h4>
+
+
+
+<h1 id="totalBalance">
+
+₹0
+
+</h1>
+
+
+</div>
+
+
+
+<div>
+
+
+<i class="fa-solid fa-wallet wallet-icon"></i>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= SUMMARY CARDS ================= -->
+
+
+<section class="cards">
+
+
+
+<div class="card income">
+
+
+<div>
+
+
+<h3>
+
+Income
+
+</h3>
+
+
+
+<h2 id="incomeAmount">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+
+</div>
+
+
+
+
+
+
+<div class="card expense">
+
+
+<div>
+
+
+<h3>
+
+Expense
+
+</h3>
+
+
+
+<h2 id="expenseAmount">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+<i class="fa-solid fa-arrow-trend-down"></i>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card saving">
+
+
+<div>
+
+
+<h3>
+
+Savings
+
+</h3>
+
+
+
+<h2 id="savingAmount">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card budget">
+
+
+<div>
+
+
+<h3>
+
+Budget Left
+
+</h3>
+
+
+
+<h2 id="budgetAmount">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+<i class="fa-solid fa-chart-pie"></i>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= CHART ================= -->
+
+
+<section class="chart-section">
+
+
+
+<div class="section-title">
+
+
+<h2>
+
+Monthly Report
+
+</h2>
+
+
+
+</div>
+
+
+
+
+<div class="chart-box">
+
+
+<canvas id="financeChart"></canvas>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= TRANSACTIONS ================= -->
+
+
+<section class="transactions">
+
+
+
+<div class="section-title">
+
+
+<h2>
+
+Recent Transactions
+
+</h2>
+
+
+
+<a href="transactions.html">
+
+View All
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+<div id="transactionList">
+
+
+<div class="card">
+
+Loading Transactions...
+
+</div>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= FAB ================= -->
+
+
+<button id="fab" class="fab">
+
+
+<i class="fa-solid fa-plus"></i>
+
+
+</button>
+
+
+
+
+
+<div class="fab-menu" id="fabMenu">
+
+
+
+<a href="income.html">
+
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+
+<span>
+
+Add Income
+
+</span>
+
+
+</a>
+
+
+
+
+
+<a href="expense.html">
+
+
+<i class="fa-solid fa-arrow-trend-down"></i>
+
+
+<span>
+
+Add Expense
+
+</span>
+
+
+</a>
+
+
+
+
+
+<a href="savings.html">
+
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+
+<span>
+
+Add Savings
+
+</span>
+
+
+</a>
+
+
+
+</div>
+
+
+
+<!-- Budget & Goals Overview -->
+
+<section class="dashboard-extra">
+
+
+<div class="section-title">
+
+<h2>Budget</h2>
+
+</div>
+
+
+<div class="card dashboard-card">
+
+
+<h3>
+Monthly Budget
+</h3>
+
+
+<h2 id="dashboardBudget">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="section-title">
+
+<h2>Savings Goals</h2>
+
+</div>
+
+
+
+<div id="dashboardGoals">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html" class="active">
+
+<i class="fa-solid fa-house"></i>
+<span>Home</span>
+
+</a>
+
+
+<a href="income.html">
+
+<i class="fa-solid fa-wallet"></i>
+<span>Income</span>
+
+</a>
+
+
+<a href="expense.html">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+<span>Expense</span>
+
+</a>
+
+
+<a href="budget.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+<span>Budget</span>
+
+</a>
+
+
+<a href="goals.html">
+
+<i class="fa-solid fa-bullseye"></i>
+<span>Goals</span>
+
+</a>
+
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+<span>Profile</span>
+
+</a>
+
+
+</nav>
+  
+
+
+
+
+
+
+
+
+
+<!-- ================= PROFILE MENU ================= -->
+
+
+<div class="profile-menu" id="profileMenu">
+
+
+
+<a href="profile.html">
+
+
+<i class="fa-solid fa-user"></i>
+
+
+Profile
+
+
+</a>
+
+<a href="#" id="archiveSaveBtn">
+
+<i class="fa-solid fa-box-archive"></i>
+
+Archive Save
+
+</a>
+
+
+<a href="settings.html">
+
+
+<i class="fa-solid fa-gear"></i>
+
+
+Settings
+
+
+</a>
+
+<a href="archive.html">
+
+
+<i class="fa-solid fa-box-archive"></i>
+
+
+Archive
+
+
+</a>
+
+
+
+<button id="logoutBtn">
+
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+
+Logout
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Chart JS -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+
+<!-- Firebase -->
+
+
+<script type="module" src="js/firebase.js"></script>
+
+
+<script type="module" src="js/auth.js"></script>
+
+
+<script type="module" src="js/dashboard.js"></script>
+
+
+
+
+
+
+
+
+
+<!-- UI Scripts -->
+
+
+<script>
+
+
+const profile =
+
+document.querySelector(".profile");
+
+
+
+const menu =
+
+document.getElementById("profileMenu");
+
+
+
+profile.onclick = ()=>{
+
+
+menu.classList.toggle("show");
+
+
+};
+
+
+
+
+
+const fab =
+
+document.getElementById("fab");
+
+
+
+const fabMenu =
+
+document.getElementById("fabMenu");
+
+
+
+fab.onclick = ()=>{
+
+
+fabMenu.classList.toggle("open");
+
+
+};
+
+
+
+
+
+window.onclick=(e)=>{
+
+
+if(!e.target.closest(".profile")){
+
+
+menu.classList.remove("show");
+
+
+}
+
+
+};
+
+
+
+</script>
+
+<script type="module" src="js/archive-save.js"></script>
+
+</body>
+
+</html>

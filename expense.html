@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Expense | Finance Pro</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+<h2>Expense</h2>
+
+</div>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+</header>
+
+<section class="card" style="margin:20px;">
+
+<h2>Add Expense</h2>
+
+<form id="expenseForm">
+
+<input
+type="number"
+id="amount"
+class="input"
+placeholder="Amount"
+required>
+
+<select
+id="category"
+class="input"
+required>
+
+<option value="">Select Category</option>
+
+<option>Food</option>
+<option>Travel</option>
+<option>Shopping</option>
+<option>Recharge</option>
+<option>Bills</option>
+<option>Medicine</option>
+<option>Education</option>
+<option>Other</option>
+
+</select>
+
+<input
+type="date"
+id="date"
+class="input"
+required>
+
+<textarea
+id="note"
+class="input"
+placeholder="Note"></textarea>
+
+<button
+class="btn"
+type="submit">
+
+Save Expense
+
+</button>
+
+</form>
+
+</section>
+
+<section style="margin:20px;">
+
+<h2>Expense History</h2>
+
+<div id="expenseList"></div>
+
+</section>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/expense.js"></script>
+
+</body>
+</html>

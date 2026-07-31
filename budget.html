@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Budget | Finance Pro</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  /* ==========================================
+   Finance Pro
+   Budget CSS
+========================================== */
+
+
+/* Budget Form */
+
+.budget-form{
+
+    margin:20px;
+
+}
+
+
+.budget-form h2{
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Budget Summary Card */
+
+
+.budget-card{
+
+    margin:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+.budget-card h1{
+
+    font-size:35px;
+
+    margin:15px 0;
+
+}
+
+
+
+.budget-card p{
+
+    font-size:16px;
+
+    color:#e5e7eb;
+
+}
+
+
+
+/* Progress Container */
+
+
+.progress{
+
+    width:100%;
+
+    height:15px;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+
+}
+
+
+
+/* Progress Bar */
+
+
+#progressBar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#10b981;
+
+    border-radius:20px;
+
+    transition:.5s ease;
+
+}
+
+
+
+/* Budget History */
+
+
+#budgetList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+#budgetList .card{
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+
+#budgetList h3{
+
+    color:#60a5fa;
+
+    font-size:25px;
+
+}
+
+
+
+#budgetList p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+/* Delete Button */
+
+
+#budgetList .btn{
+
+    background:#ef4444;
+
+}
+
+
+
+#budgetList .btn:hover{
+
+    background:#dc2626;
+
+}
+
+
+
+/* Animation */
+
+
+.budget-card{
+
+    animation:
+
+    slideUp .5s ease;
+
+}
+
+
+
+@keyframes slideUp{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:768px){
+
+
+.budget-card{
+
+    padding:20px;
+
+}
+
+
+.budget-card h1{
+
+    font-size:28px;
+
+}
+
+
+.budget-form{
+
+    margin:15px;
+
+}
+
+
+}
+  /* =================================
+   Professional Home Button
+================================= */
+
+
+.header > a{
+
+
+width:52px;
+
+height:52px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+border-radius:20px;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.15),
+rgba(255,255,255,.05)
+);
+
+
+border:
+
+1px solid rgba(255,255,255,.20);
+
+
+backdrop-filter:blur(15px);
+
+
+box-shadow:
+
+0 8px 25px rgba(0,0,0,.25);
+
+
+transition:.3s ease;
+
+
+}
+
+
+
+.header > a i{
+
+
+font-size:24px;
+
+
+color:#ffffff;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+
+.header > a:hover{
+
+
+transform:translateY(-3px) scale(1.05);
+
+
+background:
+
+linear-gradient(
+135deg,
+#4F46E5,
+#7C3AED
+);
+
+
+box-shadow:
+
+0 12px 30px rgba(79,70,229,.45);
+
+
+}
+
+
+
+.header > a:hover i{
+
+
+transform:scale(1.1);
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+.header > a{
+
+
+width:46px;
+
+height:46px;
+
+
+border-radius:17px;
+
+
+}
+
+
+
+.header > a i{
+
+
+font-size:21px;
+
+
+}
+
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<h2>Budget Planner</h2>
+
+</div>
+
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+</a>
+
+</header>
+
+
+
+<section class="card budget-form">
+
+
+<h2>Create Budget</h2>
+
+
+<form id="budgetForm">
+
+
+<input
+
+type="number"
+
+id="budgetAmount"
+
+class="input"
+
+placeholder="Enter Monthly Budget"
+
+required>
+
+
+<select id="budgetCategory" class="input">
+
+
+<option value="All">
+
+All Categories
+
+</option>
+
+
+<option>
+
+Food
+
+</option>
+
+
+<option>
+
+Travel
+
+</option>
+
+
+<option>
+
+Shopping
+
+</option>
+
+
+<option>
+
+Bills
+
+</option>
+
+
+<option>
+
+Education
+
+</option>
+
+
+<option>
+
+Other
+
+</option>
+
+
+</select>
+
+
+
+<button class="btn">
+
+Save Budget
+
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+<section class="card budget-card">
+
+
+<h2>Your Budget</h2>
+
+
+<h1 id="totalBudget">
+
+₹0
+
+</h1>
+
+
+<p>
+
+Used:
+
+<span id="usedBudget">
+
+₹0
+
+</span>
+
+</p>
+
+
+<p>
+
+Remaining:
+
+<span id="remainingBudget">
+
+₹0
+
+</span>
+
+</p>
+
+
+
+<div class="progress">
+
+<div id="progressBar">
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section style="margin:20px">
+
+
+<h2>Budget History</h2>
+
+
+<div id="budgetList">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/budget.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Archive Report | Finance Pro</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  /* =======================================
+   Finance Pro
+   Archive Detail Premium CSS
+   ======================================= */
+
+
+/* BODY */
+
+body{
+
+margin:0;
+
+padding:0;
+
+font-family:
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:#f1f5f9;
+
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+.header{
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 20px;
+
+background:#ffffff;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.08);
+
+position:relative;
+
+top:0;
+
+z-index:10;
+
+}
+
+
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+.logo i{
+
+font-size:28px;
+
+color:#2563eb;
+
+}
+
+
+
+.logo h2{
+
+margin:0;
+
+font-size:22px;
+
+}
+
+
+
+.header a{
+
+font-size:22px;
+
+color:#334155;
+
+}
+
+
+
+/* PDF AREA */
+
+#pdfReport{
+
+max-width:900px;
+
+margin:20px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+/* REPORT HEADER */
+
+
+.report-header{
+
+text-align:center;
+
+padding:25px 10px;
+
+}
+
+
+
+.brand-icon{
+
+width:70px;
+
+height:70px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:50%;
+
+font-size:30px;
+
+}
+
+
+
+.report-header h1{
+
+margin:15px 0 5px;
+
+font-size:38px;
+
+color:#0f172a;
+
+}
+
+
+
+.report-header h2{
+
+margin:5px;
+
+font-size:22px;
+
+color:#475569;
+
+}
+
+
+
+.report-header p{
+
+color:#64748b;
+
+}
+
+
+
+.line{
+
+height:3px;
+
+background:#2563eb;
+
+margin:25px 0;
+
+border-radius:10px;
+
+}
+
+
+
+
+
+/* COMMON CARD */
+
+
+.report-card{
+
+background:#ffffff;
+
+border-radius:20px;
+
+padding:22px;
+
+margin-top:25px;
+
+border:1px solid #e2e8f0;
+
+box-shadow:
+
+0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+
+.report-card h3{
+
+margin-top:0;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:20px;
+
+color:#0f172a;
+
+}
+
+
+
+.report-card h3 i{
+
+color:#2563eb;
+
+}
+
+
+
+
+
+/* USER INFO */
+
+
+.info-row{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+
+
+.info-row p{
+
+background:#f8fafc;
+
+padding:15px;
+
+border-radius:15px;
+
+margin:0;
+
+}
+
+
+
+.info-row strong{
+
+font-size:14px;
+
+color:#64748b;
+
+}
+
+
+
+
+
+/* SUMMARY CARDS */
+
+
+.summary-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+
+
+.summary-card{
+
+padding:25px 15px;
+
+border-radius:22px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.summary-card i{
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.summary-card h3{
+
+font-size:16px;
+
+margin:8px 0;
+
+}
+
+
+
+.summary-card h2{
+
+font-size:26px;
+
+margin:0;
+
+}
+
+
+
+
+
+.income{
+
+background:#16a34a;
+
+}
+
+
+
+.expense{
+
+background:#dc2626;
+
+}
+
+
+
+.saving{
+
+background:#2563eb;
+
+}
+
+
+
+
+
+/* TRANSACTION */
+
+
+.transaction-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px;
+
+margin-top:12px;
+
+background:#f8fafc;
+
+border-radius:15px;
+
+border-left:5px solid #2563eb;
+
+}
+
+
+
+.transaction-item h4{
+
+margin:0;
+
+}
+
+
+
+.transaction-item small{
+
+color:#64748b;
+
+}
+
+
+
+.amount{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+
+.in{
+
+color:#16a34a;
+
+}
+
+
+
+.out{
+
+color:#dc2626;
+
+}
+
+
+
+
+/* GOALS */
+
+
+.goal-item{
+
+padding:15px;
+
+background:#f8fafc;
+
+border-radius:15px;
+
+margin-top:12px;
+
+}
+
+
+
+.goal-item h4{
+
+margin:0 0 5px;
+
+}
+
+
+
+
+
+/* EMPTY */
+
+
+.empty{
+
+text-align:center;
+
+padding:25px;
+
+color:#64748b;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+.report-footer{
+
+text-align:center;
+
+margin-top:35px;
+
+padding-top:20px;
+
+border-top:1px solid #e2e8f0;
+
+color:#64748b;
+
+font-size:13px;
+
+}
+
+
+
+
+
+/* DOWNLOAD BUTTON */
+
+
+.download-btn{
+
+display:block;
+
+margin:25px auto;
+
+width:90%;
+
+max-width:400px;
+
+padding:16px;
+
+border:none;
+
+border-radius:18px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+box-shadow:
+
+0 10px 25px rgba(37,99,235,.3);
+
+}
+
+
+
+.download-btn i{
+
+margin-right:8px;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+
+#pdfReport{
+
+margin:10px;
+
+padding:18px;
+
+border-radius:18px;
+
+}
+
+
+
+.summary-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.info-row{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.report-header h1{
+
+font-size:30px;
+
+}
+
+
+}
+  html,
+body{
+
+width:100%;
+
+min-height:100%;
+
+overflow-y:auto;
+
+overflow-x:hidden;
+
+}
+
+
+
+body{
+
+display:block;
+
+}
+
+
+
+#pdfReport{
+
+height:auto;
+
+min-height:100vh;
+
+overflow:visible;
+
+}
+@media print{
+
+
+body{
+
+background:white;
+
+}
+
+
+.header,
+.download-btn,
+.bottom-nav{
+
+display:none !important;
+
+}
+
+
+
+#pdfReport{
+
+box-shadow:none;
+
+margin:0;
+
+max-width:100%;
+
+}
+
+
+
+.report-card,
+.summary-card{
+
+break-inside:avoid;
+
+}
+
+
+
+}
+  /* =======================================
+   Finance Pro
+   PDF Download Button
+   ======================================= */
+
+
+#downloadBtn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+width:90%;
+
+max-width:380px;
+
+margin:20px auto;
+
+padding:16px 25px;
+
+border:none;
+
+border-radius:18px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#1d4ed8
+);
+
+color:white;
+
+font-size:17px;
+
+font-weight:700;
+
+letter-spacing:.3px;
+
+cursor:pointer;
+
+box-shadow:
+
+0 10px 25px rgba(37,99,235,.35);
+
+transition:.3s ease;
+
+}
+
+
+
+#downloadBtn i{
+
+font-size:22px;
+
+}
+
+
+
+#downloadBtn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 35px rgba(37,99,235,.45);
+
+}
+
+
+
+#downloadBtn:active{
+
+transform:scale(.96);
+
+}
+
+
+
+
+
+/* Print Button */
+
+#printReportBtn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+width:90%;
+
+max-width:380px;
+
+margin:15px auto;
+
+padding:16px 25px;
+
+border:none;
+
+border-radius:18px;
+
+background:#0f172a;
+
+color:white;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.25);
+
+transition:.3s ease;
+
+}
+
+
+
+#printReportBtn i{
+
+font-size:22px;
+
+}
+
+
+
+#printReportBtn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+
+#printReportBtn:active{
+
+transform:scale(.96);
+
+}
+  
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-box-archive"></i>
+
+<h2>
+Archive Report
+</h2>
+
+</div>
+
+
+
+<a href="archive.html">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+
+</header>
+
+
+
+
+
+<!-- PDF AREA START -->
+
+<div id="pdfReport">
+
+
+
+<!-- REPORT HEADER -->
+
+
+<section class="report-header">
+
+
+<div class="brand-icon">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+
+
+<h1>
+Finance Pro
+</h1>
+
+
+<h2>
+Account Finance Report
+</h2>
+
+
+<p>
+Smart Personal Money Management
+</p>
+
+
+<div class="line"></div>
+
+
+</section>
+
+
+
+
+
+
+<!-- USER INFORMATION -->
+
+
+<section class="report-card">
+
+
+<h3>
+
+<i class="fa-solid fa-user"></i>
+
+User Information
+
+</h3>
+
+
+
+<div class="info-row">
+
+
+<p>
+
+<strong>Name</strong>
+
+<br>
+
+<span id="profileName">
+
+User
+
+</span>
+
+</p>
+
+
+
+<p>
+
+<strong>Email</strong>
+
+<br>
+
+<span id="profileEmail">
+
+example@gmail.com
+
+</span>
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- SUMMARY -->
+
+
+<section class="summary-grid">
+
+
+
+<div class="summary-card income">
+
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+
+<h3>
+
+Total Income
+
+</h3>
+
+
+<h2 id="incomeTotal">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card expense">
+
+
+<i class="fa-solid fa-arrow-trend-down"></i>
+
+
+<h3>
+
+Total Expense
+
+</h3>
+
+
+<h2 id="expenseTotal">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<div class="summary-card saving">
+
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+
+<h3>
+
+Total Savings
+
+</h3>
+
+
+<h2 id="savingTotal">
+
+₹0
+
+</h2>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- TRANSACTIONS -->
+
+
+<section class="report-card">
+
+
+<h3>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transaction History
+
+</h3>
+
+
+
+<div id="transactionList">
+
+
+<div class="empty">
+
+No Transactions Found
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- GOALS -->
+
+
+<section class="report-card">
+
+
+<h3>
+
+<i class="fa-solid fa-bullseye"></i>
+
+Savings Goals
+
+</h3>
+
+
+
+<div id="goalList">
+
+
+<div class="empty">
+
+No Goals Found
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer class="report-footer">
+
+
+<p>
+
+Generated by Finance Pro
+
+</p>
+
+
+<p>
+
+Your Smart Finance Assistant
+
+</p>
+
+
+</footer>
+
+
+
+</div>
+
+<!-- PDF AREA END -->
+
+
+
+
+
+
+
+
+
+<!-- DOWNLOAD BUTTON -->
+
+
+<button id="printReportBtn" class="download-btn">
+
+
+<i class="fa-solid fa-file-pdf"></i>
+
+
+View PDF Report
+
+
+</button>
+
+
+
+<button id="downloadBtn">
+Download PDF
+</button>
+
+
+
+<!-- SCRIPTS -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/archive-detail.js"></script>
+
+<script type="module" src="js/archive-download.js"></script>
+
+
+
+</body>
+
+</html>
