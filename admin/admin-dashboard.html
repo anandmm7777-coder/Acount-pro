@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Finance Pro</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+Header
+=========================== -->
+
+<header class="admin-header">
+
+<div class="logo">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<h2>Finance Pro Admin</h2>
+
+</div>
+
+<div class="header-actions">
+
+<button
+id="refreshBtn"
+class="refresh-btn">
+
+<i class="fa-solid fa-rotate"></i>
+
+Refresh
+
+</button>
+
+<button
+id="logoutBtn"
+class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ===========================
+Dashboard Stats
+=========================== -->
+
+<section class="stats">
+
+<div class="admin-card">
+
+<h3>Total Users</h3>
+
+<h1 id="totalUsers">
+
+0
+
+</h1>
+
+</div>
+
+<div class="admin-card">
+
+<h3>Total Income</h3>
+
+<h1 id="totalIncome">
+
+₹0
+
+</h1>
+
+</div>
+
+<div class="admin-card">
+
+<h3>Total Expense</h3>
+
+<h1 id="totalExpense">
+
+₹0
+
+</h1>
+
+</div>
+
+<div class="admin-card">
+
+<h3>Total Savings</h3>
+
+<h1 id="totalSavings">
+
+₹0
+
+</h1>
+
+</div>
+
+<div class="admin-card">
+
+<h3>Total Goals</h3>
+
+<h1 id="totalGoals">
+
+0
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- ===========================
+Users
+=========================== -->
+
+<section class="users-section">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-users"></i>
+
+Users Management
+
+</h2>
+
+</div>
+
+<input
+type="text"
+id="searchUser"
+placeholder="Search by Name, Email or UID...">
+
+<div id="userList">
+
+Loading Users...
+
+</div>
+
+</section>
+
+<!-- ===========================
+User Details Modal
+=========================== -->
+
+<div
+id="userModal"
+class="user-modal">
+
+<div class="user-modal-content">
+
+<span
+id="closeModal"
+class="close">
+
+&times;
+
+</span>
+
+<img
+id="modalPhoto"
+src="assets/profile.png"
+alt="Profile">
+
+<h2 id="modalName">
+
+User Name
+
+</h2>
+
+<p id="modalEmail">
+
+Email
+
+</p>
+
+<p id="modalUid">
+
+UID
+
+</p>
+
+<hr>
+
+<h3>
+
+Finance Summary
+
+</h3>
+
+<p>
+
+💰 Income :
+
+<span id="modalIncome">
+
+₹0
+
+</span>
+
+</p>
+
+<p>
+
+💸 Expense :
+
+<span id="modalExpense">
+
+₹0
+
+</span>
+
+</p>
+
+<p>
+
+🐷 Savings :
+
+<span id="modalSavings">
+
+₹0
+
+</span>
+
+</p>
+
+<p>
+
+📊 Budgets :
+
+<span id="modalBudgets">
+
+0
+
+</span>
+
+</p>
+
+<p>
+
+🎯 Goals :
+
+<span id="modalGoals">
+
+0
+
+</span>
+
+</p>
+
+<p>
+
+🔔 Notifications :
+
+<span id="modalNotifications">
+
+0
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+Scripts
+=========================== -->
+
+<script type="module"
+src="js/admin-dashboard.js">
+
+</script>
+
+</body>
+
+</html>
